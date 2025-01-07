@@ -1,0 +1,25 @@
+<h1>New Snacks Received</h1>
+<p>Details of the new snacks:</p>
+<p>Order ID: {{order_id}}</p>
+<table>
+    <thead>
+    <tr>
+        <th>Snacks ID</th>
+        <th>Payment ID</th>
+        <th>Payment Date</th>
+        <th>Price</th>
+        <th>Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#snacks}}
+        <tr>
+            <td>{{snacks_id}}</td>
+            <td>{{payment_id}}</td>
+            <td>{{payment_date}}</td>
+            <td>${{price}}</td>
+            <td>{{name}}</td>
+        </tr>
+    {{/snacks}}
+    </tbody>
+</table>

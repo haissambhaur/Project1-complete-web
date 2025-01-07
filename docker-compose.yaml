@@ -1,0 +1,36 @@
+
+services:
+  db:
+    image: mysql:5.7
+    container_name: proj-database
+    environment:
+      - MYSQL_ROOT_PASSWORD=redmouse
+      - MYSQL_DATABASE=edenmade_v2
+    ports:
+      - "3306:3306"
+    volumes:
+      - db_data:/var/lib/mysql
+      - ./db_init:/docker-entrypoint-initdb.d
+    
+  backend:
+    image: haissambhaur/project1-backend
+    container_name: proj-backend
+    ports:
+      - "8083:8083"
+    depends_on:
+      - db
+    environment:
+      - MYSQL_HOST=host.docker.internal
+
+  frontend:
+    image: haissambhaur/project1-frontend
+    container_name: proj-frontend
+    ports:
+      - "8080:5173"
+    depends_on:
+      - backend
+    
+
+volumes:
+  db_data:
+    
