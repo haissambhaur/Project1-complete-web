@@ -20,7 +20,7 @@ services:
     depends_on:
       - db
     environment:
-      - MYSQL_HOST=host.docker.internal
+      - MYSQL_HOST=db
 
   frontend:
     image: haissambhaur/project1-frontend
