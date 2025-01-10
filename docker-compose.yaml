@@ -27,6 +27,8 @@ services:
     container_name: proj-frontend
     ports:
       - "8080:5173"
+    environment:
+      - bckndURL=3.141.4.97
     depends_on:
       - backend
     
