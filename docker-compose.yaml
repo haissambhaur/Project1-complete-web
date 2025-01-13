@@ -28,7 +28,7 @@ services:
     ports:
       - "8080:5173"
     environment:
-      - bckndURL=3.141.4.97
+      - bckndURL=3.145.75.221
     depends_on:
       - backend
     
